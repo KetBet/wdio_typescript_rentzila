@@ -1,1 +1,5 @@
 node_modules
+allure-report
+.env
+package-lock.json
+
