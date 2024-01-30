@@ -1,0 +1,20 @@
+name: Rentzila tests
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 18
+        - name: Install
+          run: npm install
+        - name: Test
+          run: npm run wdio
+        - name: Deploy report to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v2
+          with:
+            branch: gh-pages
+            folder: allure-report
