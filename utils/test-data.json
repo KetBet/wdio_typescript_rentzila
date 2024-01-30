@@ -191,10 +191,104 @@
     "searchInput7": "Асфальтування",
     "searchInput8": "Драглайн"
   },
-  "Feedback": {
+  "Consultation": {
     "name": "Test",
     "validPhone": "+380506743060",
     "invalidPhone1": "+38063 111 111",
     "invalidPhone2": "+1 1111111111111"
-  }
+  },
+  "CatalogListSecond": [
+    "budivelna-tekhnika",
+    "komunalna-tekhnika",
+    "silskogospodarska-tekhnika",
+    "skladska-tekhnika"
+  ],
+  "Bud_technika1": [
+    "Автокрани",
+    "Бурові установки",
+    "Дорожньо-будівельна техніка",
+    "Екскаватори",
+    "Інша будівельна спецтехніка",
+    "Катки",
+    "Контейнери",
+    "Навантажувачі",
+    "Обладнання для спецтехніки",
+    "Підйомники",
+    "Техніка для земляних робіт"
+  ],
+  "Bud_technika2": [
+    "avtokrani",
+    "burovi-ustanovki",
+    "dorozhno-budivelna-tekhnika",
+    "ekskavatori",
+    "insha-budivelna-spetstekhnika",
+    "katki",
+    "konteineri",
+    "navantazhuvachi",
+    "ustanovki-dlya-burinnia",
+    "pidiomniki",
+    "tekhnika-dlya-zemlianikh-robit"
+  ],
+  "Kom_technika1": [
+    "Аварійні машини",
+    "Дорожньо-прибиральна техніка",
+    "Клінінгове обладнання",
+    "Комунальні контейнери",
+    "Комунальні машини",
+    "Обладнання для комунальної техніки"
+  ],
+  "Kom_technika2": [
+    "avariini-mashini",
+    "dorozhno-pribiralna-tekhnika",
+    "kliningove-obladnannia",
+    "komunalni-konteineri",
+    "komunalni-mashini",
+    "tekhnika-dlya-skladuvannia"
+  ],
+  "Selhoz1": [
+    "Ґрунтообробна техніка",
+    "Жатки",
+    "Інша сільгосптехніка",
+    "Картопляна техніка",
+    "Комбайни",
+    "Лісозаготівельна техніка",
+    "Обладнання",
+    "Післязбиральна техніка",
+    "Посівна та садильна техніка",
+    "Сільськогосподарська нерухомість",
+    "Техніка для внесення добрив",
+    "Техніка для заготівлі сіна",
+    "Техніка для поливу та зрошення",
+    "Техніка для саду та городу",
+    "Техніка для тваринництва",
+    "Техніка для транспортування",
+    "Трактори"
+  ],
+  "Selhoz2": [
+    "gruntoobrobna-tekhnika",
+    "zhatki",
+    "insha-silgosptekhnika",
+    "kartopliana-tekhnika",
+    "kombaini",
+    "lisozagotivelna-tekhnika",
+    "obladnannia",
+    "pisliazbiralna-tekhnika",
+    "posivna-ta-sadilna-tekhnika",
+    "silskogospodarska-nerukhomist",
+    "tekhnika-dlya-zagotivli-sina",
+    "tekhnika-dlya-transportuvannia",
+    "tekhnika-dlya-polivu-ta-zroshennia",
+    "tekhnika-dlya-tvarinnitstva",
+    "obladnannia-dlya-komunalnoyi-tekhniki",
+    "tekhnika-dlya-sadu-ta-gorodu",
+    "traktori"
+  ],
+  "Skladska1": [
+    "Обладнання для навантажувачів",
+    "Техніка для складування"
+  ],
+  "Skladska2": [
+    "ekskavatori-dlya-znesennia",
+    "obladnannia-dlya-navantazhuvachiv"
+  ]
 }

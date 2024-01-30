@@ -6,9 +6,19 @@
       "node",
       "@wdio/globals/types",
       "@wdio/mocha-framework",
-      "expect-webdriverio"
+      "expect-webdriverio",
+      "wdio-intercept-service"
     ],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["test", "wdio.conf.ts"]
 }

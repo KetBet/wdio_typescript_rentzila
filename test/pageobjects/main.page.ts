@@ -40,17 +40,17 @@ const searchHistoryFirst: string =
 const searchDropdownServices: string = '[data-testid="services"]';
 const searchResultsPagination: string = "h1.MapPagination_count__c_dzg";
 const mapSection: string = "div.MapPage_homeMap__06sWe";
-const searchedUnits: string = 'div[data-testid="cardContainer"]';
+const searchedUnits: string = 'div[data-testid="resultItem"]';
 const clearSearch: string =
   'div.Navbar_containerBottom__Kbaqk div[data-testid="searchClear"]';
   const unitTitle: string = "h1.UnitName_name__oM_YV";
   const catalogButton: string =
     "div.Navbar_wrapperBottom__kiGE5 > div:first-of-type";
-  const catalogContainer: string = "div.Catalog_container__0jVbE";
-  const catalog1lvl: string = "div.Catalog_parent__k_4MP";
-  const catalog2lvl: string =
-    "div.Catalog_list__sVdCj:not(.Catalog_listSecond__awZH7) > div.CatalogItem_item__xvBwY";
-  const catalog3lvl: string =
+  const catalogDropdown: string = "div.Catalog_container__0jVbE";
+  const catalogList1: string = "div.Catalog_parent__k_4MP";
+  const catalogList2: string =
+    "div > div.Catalog_container__0jVbE > div.Catalog_list__sVdCj";
+  const catalogList3: string =
     "div.Catalog_listSecond__awZH7 > div.CatalogItem_item__xvBwY";
 
 class MainPage extends Page {
@@ -194,20 +194,20 @@ class MainPage extends Page {
     return super.get(catalogButton);
   }
 
-  public get catalogContainer() {
-    return super.get(catalogContainer);
+  public get catalogDropdown() {
+    return super.get(catalogDropdown);
   }
 
-  public get catalog1lvl() {
-    return super.getAll(catalog1lvl);
+  public get catalogList1() {
+    return super.getAll(catalogList1);
   }
 
-  public get catalog2lvl() {
-    return super.getAll(catalog2lvl);
+  public get catalogList2() {
+    return super.getAll(catalogList2);
   }
 
-  public get catalog3lvl() {
-    return super.getAll(catalog3lvl);
+  public get catalogList3() {
+    return super.getAll(catalogList3);
   }
 
   public async clickLogoIcon() {

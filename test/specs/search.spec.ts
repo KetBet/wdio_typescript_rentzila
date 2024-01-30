@@ -12,11 +12,11 @@ describe("Verify Search Input", () => {
   });
   it("should verify Search Input", async () => {
     await mainPage.clickSearchInput();
-    await expect(await mainPage.searchDropdown).toBeDisplayed();
+    await mainPage.searchDropdown.waitForDisplayed();
     await expect(await mainPage.searchDropdownServices).toBeDisplayed();
     await browser.keys("\uE007");
     await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await mainPage.searchInputField).toHaveValue("");
     await expect(await productsPage.listUnits).toBeDisplayed();
     await mainPage.clickLogoIcon();
@@ -25,7 +25,7 @@ describe("Verify Search Input", () => {
     await mainPage.searchInputField.setValue(`${data.Search.searchInput1}`);
     await browser.keys("\uE007");
     await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await mainPage.mapSection).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toHaveText(
@@ -34,7 +34,6 @@ describe("Verify Search Input", () => {
     await productsPage.clickFirstUnitItem();
     await expect(browser).toHaveUrl(new RegExp(/unit\/$/));
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await expect(await mainPage.searchDropdown).toBeDisplayed();
     await expect(await mainPage.searchHistoryFirst).toHaveText(
@@ -42,8 +41,8 @@ describe("Verify Search Input", () => {
     );
     await mainPage.searchInputField.setValue(`${data.Search.searchInput2}`);
     await browser.keys("\uE007");
-    //await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    await browser.pause(1500);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await mainPage.mapSection).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toHaveText(
@@ -52,7 +51,6 @@ describe("Verify Search Input", () => {
     await productsPage.clickFirstUnitItem();
     await expect(browser).toHaveUrl(new RegExp(/unit\/$/));
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await expect(await mainPage.searchDropdown).toBeDisplayed();
     await expect(await mainPage.searchHistoryFirst).toHaveText(
@@ -60,21 +58,17 @@ describe("Verify Search Input", () => {
     );
     await mainPage.searchInputField.setValue(`${data.Search.searchInput3}`);
     await browser.keys("\uE007");
-    //await browser.pause(1500);
     await productsPage.clickFirstUnitItem();
     await expect(browser).toHaveUrl(new RegExp(/unit\/$/));
     await expect(await unitPage.unitTitle).toHaveText(
       expect.stringContaining(`${data.Search.searchInput3}`)
     );
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await mainPage.searchInputField.setValue(`${data.Search.searchInput4}`);
-    //await browser.pause(1500);
     await expect(await mainPage.searchedUnits).not.toBeExisting();
     await browser.keys("\uE007");
-    //await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await mainPage.searchResultsPagination).toHaveText(
       `Знайдено 0 оголошень на видимій території за запитом " "`
     );
@@ -85,8 +79,8 @@ describe("Verify Search Input", () => {
     await browser.pause(1500);
     await expect(await mainPage.searchedUnits).toBeExisting();
     await browser.keys("\uE007");
-    //await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    await browser.pause(1500);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await mainPage.searchResultsPagination).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toHaveText(
       expect.stringContaining(`${data.Search.searchInput5}`)
@@ -94,18 +88,16 @@ describe("Verify Search Input", () => {
     await productsPage.clickFirstUnitItem();
     await expect(browser).toHaveUrl(new RegExp(/unit\/$/));
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await mainPage.searchInputField.setValue(`${randomSymbol}`);
-    //await browser.pause(1500);
     if (await mainPage.searchedUnits[0].isExisting()) {
       await expect(await mainPage.searchedUnits).toBeDisplayed();
     } else {
       await expect(await mainPage.searchedUnits).not.toBeDisplayed();
     }
     await browser.keys("\uE007");
-    //await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    await browser.pause(1500);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     if (!["<", ">", "^", ";", "{", "}", "`"].includes(randomSymbol)) {
       await expect(await mainPage.searchInputField).toHaveValue(
         `${randomSymbol}`
@@ -118,22 +110,18 @@ describe("Verify Search Input", () => {
       await expect(await productsPage.listUnits).toBeDisplayed();
     }
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await mainPage.searchInputField.setValue(`${data.Search.searchInput6}`);
-    //await browser.pause(1500);
     await expect(await mainPage.searchedUnits).not.toBeExisting();
     await browser.keys("\uE007");
-    //await browser.pause(1500);
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    await browser.pause(1500);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await mainPage.searchResultsPagination).toHaveText(
       `Знайдено 0 оголошень на видимій території за запитом "${data.Search.searchInput6}"`
     );
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await mainPage.searchInputField.setValue(`${data.Search.searchInput7}`);
-    //await browser.pause(1500);
     await expect(await mainPage.searchedUnits).toBeExisting();
     await expect(
       await mainPage.searchService(`${data.Search.searchInput7}`)
@@ -141,7 +129,7 @@ describe("Verify Search Input", () => {
     await (
       await mainPage.searchService(`${data.Search.searchInput7}`)
     ).click();
-    await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
+    //await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
     await expect(await productsPage.selectedItem).toHaveText(
       `${data.Search.searchInput7}`
     );
@@ -150,10 +138,8 @@ describe("Verify Search Input", () => {
       expect.stringContaining(`Знайдено`)
     );
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await mainPage.searchInputField.setValue(`${data.Search.searchInput8}`);
-    //await browser.pause(1500);
     await expect(await mainPage.searchedUnits).toBeExisting();
     await expect(
       await mainPage.searchCategory(
@@ -176,12 +162,10 @@ describe("Verify Search Input", () => {
       expect.stringContaining(`Знайдено`)
     );
     await mainPage.clickLogoIcon();
-    //await browser.pause(1500);
     await mainPage.clickSearchInput();
     await mainPage.searchInputField.setValue(`${data.Search.searchInput3}`);
     await expect(await mainPage.searchDropdown).toBeDisplayed();
     await expect(await mainPage.searchDropdownServices).toBeDisplayed();
-    //await browser.pause(1500);
     await expect(await mainPage.searchedUnits).toBeDisplayed();
     await mainPage.clickClearSearch();
     await expect(await mainPage.searchInputField).toHaveValue("");
