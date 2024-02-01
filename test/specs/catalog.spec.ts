@@ -14,7 +14,7 @@ describe('Verify "Каталог"', () => {
       await expect(await mainPage.catalogButton).toBeDisplayed();
       await mainPage.clickCatalogButton();
       await expect(await mainPage.catalogDropdown).toBeDisplayed();
-      await expect(await mainPage.catalogList1).toBeDisplayed();
+      await expect(await mainPage.catalogList1).toBeExisting();
       await mainPage.catalogList1[0].moveTo();
       await expect(await mainPage.catalogList2).toBeDisplayed();
       filter = await mainPage.catalogList2[i].getText();

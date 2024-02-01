@@ -6,7 +6,7 @@ describe("Verify that all elements on the footer are displayed and all links are
     await mainPage.openMainUrl();
   });
   it("should verify that all elements on the footer are displayed and all links are clickable", async () => {
-    (await footerPage.footer).scrollIntoView();
+    await footerPage.footer.scrollIntoView();
     await expect(await footerPage.footer).toBeDisplayed();
     await expect(await footerPage.logoFoter).not.toBeClickable();
     await expect(await footerPage.aboutUsLabel).toBeDisplayed();
@@ -24,17 +24,17 @@ describe("Verify that all elements on the footer are displayed and all links are
       expect.stringContaining(`/privacy-policy/`)
     );
     await expect(await footerPage.privacyPolicyTitle).toBeDisplayed();
-    (await footerPage.footer).scrollIntoView();
+    await footerPage.footer.scrollIntoView();
     await footerPage.clickCookieRulesLink();
     await expect(browser).toHaveUrl(expect.stringContaining(`/cookie-policy/`));
     await expect(await footerPage.cookieRulesTitle).toBeDisplayed();
-    (await footerPage.footer).scrollIntoView();
+    await footerPage.footer.scrollIntoView();
     await footerPage.clickTermsConditionsLink();
     await expect(browser).toHaveUrl(
       expect.stringContaining(`/terms-conditions/`)
     );
     await expect(await footerPage.termsConditionsTitle).toBeDisplayed();
-    (await footerPage.footer).scrollIntoView();
+    await footerPage.footer.scrollIntoView();
     await footerPage.clickUnitCardsLink();
     await expect(browser).toHaveUrl(expect.stringContaining(`/products/`));
     await expect(await footerPage.mainSearchInputField).toBeDisplayed();
@@ -45,7 +45,7 @@ describe("Verify that all elements on the footer are displayed and all links are
     await mainPage.clickLogoIcon();
     await expect(browser).toHaveUrl(`${process.env.ENV}`);
     await expect(await mainPage.mainTitle).toBeDisplayed();
-    (await footerPage.footer).scrollIntoView();
+    await footerPage.footer.scrollIntoView();
     await footerPage.clickTendersLink();
     await expect(browser).toHaveUrl(expect.stringContaining(`/tenders-map/`));
     await expect(await footerPage.tenderSearchInputField).toBeDisplayed();

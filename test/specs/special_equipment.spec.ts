@@ -51,7 +51,6 @@ describe('Checking "Спецтехніка" section on the main page', () => {
         await mainPage.clickCloseTelegramPopUp();
         await mainPage.clickVehiclesTab(i);
         await mainPage.clickVehiclesItem(j);
-        await browser.pause(1000);
         await expect(browser).toHaveUrl(
           expect.stringContaining(`${process.env.ENV}products/`)
         );
@@ -71,7 +70,6 @@ describe('Checking "Спецтехніка" section on the main page', () => {
           );
           await mainPage.clickLogoIcon();
           await expect(browser).toHaveUrl(`${process.env.ENV}`);
-          await browser.pause(1000);
         }
       }
     }

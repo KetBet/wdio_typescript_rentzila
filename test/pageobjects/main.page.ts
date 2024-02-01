@@ -44,12 +44,10 @@ const searchedUnits: string = 'div[data-testid="resultItem"]';
 const clearSearch: string =
   'div.Navbar_containerBottom__Kbaqk div[data-testid="searchClear"]';
   const unitTitle: string = "h1.UnitName_name__oM_YV";
-  const catalogButton: string =
-    "div.Navbar_wrapperBottom__kiGE5 > div:first-of-type";
+  const catalogButton: string = "div.NavbarCatalog_label__s1meA";
   const catalogDropdown: string = "div.Catalog_container__0jVbE";
-  const catalogList1: string = "div.Catalog_parent__k_4MP";
-  const catalogList2: string =
-    "div > div.Catalog_container__0jVbE > div.Catalog_list__sVdCj";
+  const catalogList1: string ="div.Catalog_parent__k_4MP.Catalog_active__ivOT3";
+  const catalogList2: string = "div.CatalogItem_item__xvBwY";
   const catalogList3: string =
     "div.Catalog_listSecond__awZH7 > div.CatalogItem_item__xvBwY";
 
@@ -274,6 +272,21 @@ class MainPage extends Page {
 
   public async clickCatalogButton() {
     await this.catalogButton.click();
+  }
+
+  public async checkFeedbackPresent(
+    feedbackList: any,
+    name: string,
+    phone: string
+  ) {
+    let checkfeedback = null;
+    for (const feedback of feedbackList) {
+      if (feedback.name === name && feedback.phone === phone) {
+        checkfeedback = feedback;
+        break; 
+      }
+    }
+    await expect(checkfeedback).not.toBeUndefined();
   }
 
   public openMainUrl() {

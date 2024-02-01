@@ -39,7 +39,6 @@ describe('Checking "Послуги" section on the main page', () => {
         await mainPage.clickServicesTab(i);
         let item: string = await mainPage.servicesItemsLabels[n].getText();
         await mainPage.clickServicesItem(n);
-        await browser.pause(1000)
         await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
         await expect(await productsPage.selectedItem).toHaveText(item);
         if (await mainPage.searchResultsPagination.getText() !== 'Знайдено 0 оголошень на видимій території') {
@@ -50,7 +49,6 @@ describe('Checking "Послуги" section on the main page', () => {
         }
         await mainPage.clickLogoIcon();
         await expect(browser).toHaveUrl(`${process.env.ENV}`);
-        await browser.pause(1000)
       }
     }
 });

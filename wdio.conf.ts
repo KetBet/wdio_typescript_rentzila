@@ -1,14 +1,22 @@
+import type { Options } from "@wdio/types";
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
-export const config = {
+export const config: Options.Testrunner = {
   //
   // ====================
   // Runner Configuration
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
+  autoCompileOpts: {
+    autoCompile: true,
+    tsNodeOpts: {
+      project: "./tsconfig.json",
+      transpileOnly: true,
+    },
+  },
   //
   // ==================
   // Specify Test Files
@@ -93,7 +101,7 @@ export const config = {
   baseUrl: process.env.ENV,
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 30000,
+  waitforTimeout: 10000,
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
@@ -128,7 +136,17 @@ export const config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
+  reporters: [
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+        disableMochaHooks: true,
+      },
+    ],
+  ],
 
   //
   // Options to be passed to Mocha.
@@ -189,7 +207,7 @@ export const config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {object}         browser      instance of created browser/device session
    */
-  before: function (capabilities, specs) {
+  before: function () {
     browser.maximizeWindow();
   },
   /**
