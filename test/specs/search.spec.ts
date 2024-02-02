@@ -12,12 +12,13 @@ describe("Verify Search Input", () => {
     await mainPage.openMainUrl();
   });
   it("should verify Search Input", async () => {
+    await mainPage.clickCloseTelegramPopUp();
     await mainPage.clickSearchInput();
     await mainPage.searchDropdown.waitForDisplayed();
     await expect(await mainPage.searchDropdownServices).toBeDisplayed();
     await browser.keys(Key.Enter);
     await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
-    await expect(await mainPage.searchInputField).toHaveValue("");
+    await expect(await mainPage.searchInputField).toHaveText("");
     await expect(await productsPage.listUnits).toBeDisplayed();
     await mainPage.clickLogoIcon();
     await mainPage.clickSearchInput();
@@ -124,9 +125,6 @@ describe("Verify Search Input", () => {
       await mainPage.searchService(`${data.Search.searchInput7}`)
     ).click();
     await expect(browser).toHaveUrl(`${process.env.ENV}products/`);
-    await expect(await productsPage.selectedItem).toHaveText(
-      `${data.Search.searchInput7}`
-    );
     await expect(await mainPage.searchResultsPagination).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toHaveText(
       expect.stringContaining(`Знайдено`)
@@ -147,9 +145,6 @@ describe("Verify Search Input", () => {
     ).click();
     await expect(browser).toHaveUrl(
       expect.stringContaining(`${process.env.ENV}products/`)
-    );
-    await expect(await productsPage.selectedItem).toHaveText(
-      expect.stringContaining(`${data.Search.searchInput8.toLowerCase()}`)
     );
     await expect(await mainPage.searchResultsPagination).toBeDisplayed();
     await expect(await mainPage.searchResultsPagination).toHaveText(

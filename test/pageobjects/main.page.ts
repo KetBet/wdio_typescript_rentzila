@@ -1,55 +1,55 @@
 import Page from "./page.js";
 
-const servicesSection: string = 'section[data-testid="services"]';
-const servicesTabs: string =
+const servicesSection = 'section[data-testid="services"]';
+const servicesTabs =
   "div.RentzilaProposes_categories_list__cxa6m > div.RentzilaProposes_service__oHepD";
-const servicesItem1: string = "[data-testid='service__kompleks-robit']";
-const servicesItem2: string =
+const servicesItem1 = "[data-testid='service__kompleks-robit']";
+const servicesItem2 =
   "[data-testid='service__navantazhennya-ta-rozvantazhennya']";
-const servicesItem3: string = "[data-testid='service__asfaltuvannya']";
-const servicesItem4: string = "[data-testid='service__dorozhni-roboti']";
-const servicesItem5: string = "[data-testid='service__orannya-zemli']";
-const servicesItem6: string = "[data-testid='service__pidiomni-roboti']";
-const servicesItem7: string = "[data-testid='service__perevezennya-materialiv']";
-const servicesItems: string =
+const servicesItem3 = "[data-testid='service__asfaltuvannya']";
+const servicesItem4 = "[data-testid='service__dorozhni-roboti']";
+const servicesItem5 = "[data-testid='service__orannya-zemli']";
+const servicesItem6 = "[data-testid='service__pidiomni-roboti']";
+const servicesItem7 = "[data-testid='service__perevezennya-materialiv']";
+const servicesItems =
   'section[data-testid="services"] > div.RentzilaProposes_proposes_list__X8dRW > div.RentzilaProposes_proposes_item__sY_h2';
-const servicesItemsLabels: string =
+const servicesItemsLabels =
   'section[data-testid="services"] > div.RentzilaProposes_proposes_list__X8dRW > div.RentzilaProposes_proposes_item__sY_h2 > div.RentzilaProposes_name__DTnwr';
-const logoIcon: string = 'a > div[data-testid="logo"]';
-const closeTelegramPopUp: string = 'div[data-testid="crossButton"]';
-const vehiclesSection: string = "[data-testid='specialEquipment'] > h2";
-const vehiclesTabs: string =
+const logoIcon = 'a > div[data-testid="logo"]';
+const closeTelegramPopUp = 'div[data-testid="crossButton"]';
+const vehiclesSection = "[data-testid='specialEquipment'] > h2";
+const vehiclesTabs =
   "div.RentzilaProposes_categories_list__cxa6m > h3.RentzilaProposes_service__oHepD";
-const vehiclesItem1: string = '[data-testid="category__sivalki"]';
-const vehiclesItem2: string = '[data-testid="category__traktori"]';
-const vehiclesItem3: string = '[data-testid="category__obpriskuvachi"]';
-const vehiclesItem4: string = '[data-testid="category__ekskavatori"]';
-const vehiclesItem5: string = '[data-testid="category__navantazhuvachi"]';
-const vehiclesItem6: string = '[data-testid="category__pidiomniki"]';
-const vehiclesItem7: string = '[data-testid="category__komunalni-mashini"]';
-const vehiclesItems: string =
+const vehiclesItem1 = '[data-testid="category__sivalki"]';
+const vehiclesItem2 = '[data-testid="category__traktori"]';
+const vehiclesItem3 = '[data-testid="category__obpriskuvachi"]';
+const vehiclesItem4 = '[data-testid="category__ekskavatori"]';
+const vehiclesItem5 = '[data-testid="category__navantazhuvachi"]';
+const vehiclesItem6 = '[data-testid="category__pidiomniki"]';
+const vehiclesItem7 = '[data-testid="category__komunalni-mashini"]';
+const vehiclesItems =
   'section[data-testid="specialEquipment"] > div.RentzilaProposes_proposes_list__X8dRW > div.RentzilaProposes_proposes_item__sY_h2';
-const vehiclesItemsLabels: string =
+const vehiclesItemsLabels =
   'section[data-testid="specialEquipment"] > div.RentzilaProposes_proposes_list__X8dRW > div.RentzilaProposes_proposes_item__sY_h2 > div.RentzilaProposes_name__DTnwr';
-const mainTitle: string = "h1.HeroSection_title__QIzpM";
-const searchInputField: string =
-  'div.Navbar_containerBottom__Kbaqk input[data-testid="searchInput"]';
-const searchDropdown: string = '[data-testid="searchDropdown"]';
-const searchHistoryFirst: string =
-  "div:first-of-type > div.SearchResultItem_item_name__SXnXJ:first-of-type";
-const searchDropdownServices: string = '[data-testid="services"]';
-const searchResultsPagination: string = "h1.MapPagination_count__c_dzg";
-const mapSection: string = "div.MapPage_homeMap__06sWe";
-const searchedUnits: string = 'div[data-testid="resultItem"]';
-const clearSearch: string =
-  'div.Navbar_containerBottom__Kbaqk div[data-testid="searchClear"]';
-  const unitTitle: string = "h1.UnitName_name__oM_YV";
-  const catalogButton: string = "div.NavbarCatalog_label__s1meA";
-  const catalogDropdown: string = "div.Catalog_container__0jVbE";
-  const catalogList1: string ="div.Catalog_parent__k_4MP.Catalog_active__ivOT3";
-  const catalogList2: string = "div.CatalogItem_item__xvBwY";
-  const catalogList3: string =
-    "div.Catalog_listSecond__awZH7 > div.CatalogItem_item__xvBwY";
+const mainTitle = "h1.HeroSection_title__QIzpM";
+const searchInputField =
+  '[class*="Navbar_searchWrapper"] [class*="MainSearch_inputForm"]';
+const searchDropdown = "[data-testid='searchDropdown']";
+const searchHistoryFirst =
+  "div:first-of-type > [data-testid='resultItem']:first-of-type";
+const searchDropdownServices = '[data-testid="services"]';
+const searchResultsPagination = "[class*='MapPagination_count']";
+const mapSection = "#map";
+const searchedUnits = 'div[data-testid="resultItem"]';
+const clearSearch =
+  '[data-testid="searchClear"]';
+  const unitTitle = '[class*="UnitName_name"]';
+  const catalogButton = '[class*="NavbarCatalog_label"]';
+  const catalogDropdown = '[class*="Catalog_container"]';
+  const catalogList1 ="[class*='Catalog_parent']";
+  const catalogList2 = '[class*="Catalog_list"]';
+  const catalogList3 =
+    '[class*="CatalogItem_item"]';
 
 class MainPage extends Page {
   public get servicesItem1() {

@@ -142,7 +142,7 @@ export const config: Options.Testrunner = {
       {
         outputDir: "allure-results",
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
         disableMochaHooks: true,
       },
     ],
@@ -250,8 +250,9 @@ export const config: Options.Testrunner = {
    * @param {boolean} result.passed    true if test has passed, otherwise false
    * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-  // },
+  afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    if (!passed) await browser.takeScreenshot();
+  },
 
   /**
    * Hook that gets executed after the suite has ended
@@ -293,7 +294,7 @@ export const config: Options.Testrunner = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {<Object>} results object containing test results
    */
-  // onComplete: function(exitCode, config, capabilities, results) {
+  //onComplete: function(exitCode, config, capabilities, results) {
   // },
   /**
    * Gets executed when a refresh happens.
